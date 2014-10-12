@@ -74,6 +74,10 @@ public class GameWorld extends World
         addObject(grasssmall3, 900, 568);
         GrassSmall grasssmall4 = new GrassSmall();
         addObject(grasssmall4, 1000, 615);
+        
+        Sky s = new Sky();
+        addObject(s, 900, 0);
+        s.setLocation(900, 0);
 
         setPaintOrder(GrassLarge.class, GrassSmall.class, LightGroundOne.class, LightGroundTwo.class);
      
