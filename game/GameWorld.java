@@ -52,12 +52,11 @@ public class GameWorld extends World
         LightGroundTwo lightgroundtwo2 = new LightGroundTwo();
         addObject(lightgroundtwo2, 787, 588);
         lightgroundtwo2.setLocation(738, 584);
-        
 
         Ground g = new Ground();
         addObject(g, 900, 0);
         g.setLocation(900, 0);
-        
+
         GrassSmall grasssmall = new GrassSmall();
         addObject(grasssmall, 213, 620);
         GrassLarge grasslarge = new GrassLarge();
@@ -74,18 +73,32 @@ public class GameWorld extends World
         addObject(grasssmall3, 900, 568);
         GrassSmall grasssmall4 = new GrassSmall();
         addObject(grasssmall4, 1000, 615);
-        
+
         Sky s = new Sky();
         addObject(s, 900, 0);
         s.setLocation(900, 0);
-        
+
         Platforms p = new Platforms();
         addObject(p, 0, 590);
-        
+
         Professor prof = new Professor();
         addObject(prof, 268, 480);
 
         setPaintOrder(GrassLarge.class, GrassSmall.class, Professor.class, LightGroundOne.class, LightGroundTwo.class);
-     
+
+        Cloud cloud = new Cloud();
+        addObject(cloud, 121, 130);
+        Cloud cloud2 = new Cloud();
+        addObject(cloud2, 327, 60);
+        Cloud cloud3 = new Cloud();
+        addObject(cloud3, 592, 190);
+        Cloud cloud4 = new Cloud();
+        addObject(cloud4, 649, 71);
+        removeObject(cloud3);
+        Cloud cloud5 = new Cloud();
+        addObject(cloud5, 478, 136);
+        cloud2.setLocation(684, 176);
+        cloud5.setLocation(266, 97);
+        cloud2.setLocation(508, 125);
     }
 }
