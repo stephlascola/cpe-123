@@ -78,8 +78,14 @@ public class GameWorld extends World
         Sky s = new Sky();
         addObject(s, 900, 0);
         s.setLocation(900, 0);
+        
+        Platforms p = new Platforms();
+        addObject(p, 0, 590);
+        
+        Professor prof = new Professor();
+        addObject(prof, 268, 480);
 
-        setPaintOrder(GrassLarge.class, GrassSmall.class, LightGroundOne.class, LightGroundTwo.class);
+        setPaintOrder(GrassLarge.class, GrassSmall.class, Professor.class, LightGroundOne.class, LightGroundTwo.class);
      
     }
 }
