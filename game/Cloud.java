@@ -37,7 +37,7 @@ public class Cloud extends Sky
      */
     public void act() 
     {
-        moveCloud();
+        moveCloud(); //moves clouds across screen
     }   
     
     private void moveCloud()
