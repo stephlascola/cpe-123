@@ -26,8 +26,8 @@ public class GameWorld extends World
     public void act()
     {
         count++; //Increase counter for global synchronization
-        spawnEnemyA();
-        changeTimer();
+        spawnObstacles();//adds obstacles
+        changeTimer();//counts down timer for spawning obstacles
     }
 
     /**
@@ -87,7 +87,7 @@ public class GameWorld extends World
         Professor prof = new Professor();
         addObject(prof, 268, 480);
 
-        setPaintOrder(GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, LightGroundOne.class, LightGroundTwo.class);
+        setPaintOrder(GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class);
 
         Cloud cloud = new Cloud();
         addObject(cloud, 121, 130);
@@ -105,21 +105,26 @@ public class GameWorld extends World
         cloud2.setLocation(508, 125);
     }
     /**
-     * Spawns random obstacles (stump placeholder?) 
+     * Spawns random obstacles (stump placeholder and static dinosaur placeholders?) 
      * Sets timer to ensure that spawned objects won't overlap
      * @SarahStephens
      */
-    public void spawnEnemyA()
+    public void spawnObstacles()
     {
         if ((Greenfoot.getRandomNumber(2000) < 5) && (spawnTimer == 0))
         {
             EnemyA enemyA = new EnemyA();
             addObject(enemyA, getWidth(), getHeight()-70);
             spawnTimer = 50;
-        }
-        
-        changeTimer();
+        }        
+        else if ((Greenfoot.getRandomNumber(2000) < 3) && (spawnTimer == 0))
+        {
+            EnemyB enemyB = new EnemyB();
+            addObject(enemyB, getWidth(), getHeight()-70);
+            spawnTimer = 50;
+        }    
     }
+        
     /**
      * Counts down the enemy spawn timer one time. Is used to 
      * set a cooldown for the spawn of obstacles so that they 
