@@ -10,6 +10,7 @@ public class GameWorld extends World
 {
     private int count = 0; //Holds values for
     private int spawnTimer = 0; //Holds value of time since last obstacle spawned
+    public GreenfootSound music;
 
     /**
      * Constructor for objects of class GameWorld.
@@ -21,6 +22,10 @@ public class GameWorld extends World
         super(800, 640, 1, false); 
 
         prepare();
+        
+        music = new GreenfootSound("ElectroRock.mp3"); //start music
+        //music credit: ElectroRock by Deceseased Superior Technician
+        //music.playLoop();
     }
 
     public void act()

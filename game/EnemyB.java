@@ -17,10 +17,18 @@ public class EnemyB extends Obstacles
         move();
         remove();
     }    
+    /**
+     * Moves the obstacle across the game screen. 
+     * @SarahStephens
+     */
     public void move()
     {
         setLocation(getX() - 5, getY());
     }
+    /**
+     * Removes the obstacle when it reaches the end of the world
+     * @Sarah Stephens
+     */
     public void remove()
     {
         if (getX() == 0)
