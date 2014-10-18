@@ -24,8 +24,8 @@ public class GameWorld extends World
         prepare();
         
         music = new GreenfootSound("ElectroRock.mp3"); //start music
-        //music credit: ElectroRock by Deceseased Superior Technician
-        //music.playLoop();
+        //music credit: ElectroRock by Deceseased Superior Technician (feel free to change the music)
+        music.playLoop();
     }
 
     public void act()
