@@ -14,7 +14,7 @@ public class GrassLarge extends Ground
      */
     public void act() 
     {
-        move(-2);
+        move(-5);
         destroy();
     }    
     

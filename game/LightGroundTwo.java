@@ -14,7 +14,7 @@ public class LightGroundTwo extends Ground
      */
    public void act() 
     {
-        move(-2);
+        move(-5);
         destroy();
     }    
     

@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GameWorld extends World
 {
     private int count = 0; //Holds values for
+    private int spawnTimer = 0; //Holds value of time since last obstacle spawned
 
     /**
      * Constructor for objects of class GameWorld.
@@ -25,6 +26,8 @@ public class GameWorld extends World
     public void act()
     {
         count++; //Increase counter for global synchronization
+        spawnEnemyA();
+        changeTimer();
     }
 
     /**
@@ -84,7 +87,7 @@ public class GameWorld extends World
         Professor prof = new Professor();
         addObject(prof, 268, 480);
 
-        setPaintOrder(GrassLarge.class, GrassSmall.class, Professor.class, LightGroundOne.class, LightGroundTwo.class);
+        setPaintOrder(GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, LightGroundOne.class, LightGroundTwo.class);
 
         Cloud cloud = new Cloud();
         addObject(cloud, 121, 130);
@@ -100,5 +103,34 @@ public class GameWorld extends World
         cloud2.setLocation(684, 176);
         cloud5.setLocation(266, 97);
         cloud2.setLocation(508, 125);
+    }
+    /**
+     * Spawns random obstacles (stump placeholder?) 
+     * Sets timer to ensure that spawned objects won't overlap
+     * @SarahStephens
+     */
+    public void spawnEnemyA()
+    {
+        if ((Greenfoot.getRandomNumber(2000) < 5) && (spawnTimer == 0))
+        {
+            EnemyA enemyA = new EnemyA();
+            addObject(enemyA, getWidth(), getHeight()-70);
+            spawnTimer = 50;
+        }
+        
+        changeTimer();
+    }
+    /**
+     * Counts down the enemy spawn timer one time. Is used to 
+     * set a cooldown for the spawn of obstacles so that they 
+     * will not overlap on the game screen.
+     * @SarahStephens
+     */
+    public void changeTimer()
+    {
+        if (spawnTimer > 0)
+        {
+            spawnTimer = spawnTimer - 1;
+        }
     }
 }
