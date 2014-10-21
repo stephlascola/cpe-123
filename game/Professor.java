@@ -33,6 +33,7 @@ public class Professor extends Characters
         }
         checkIfFalling();
         animation();
+        remove();
     } 
     
     public void jump()
@@ -97,5 +98,22 @@ public class Professor extends Characters
             return;
         }
         frame ++;
+    }
+    /**
+     * This is being used so when the professor touches the currency, he collects it.
+     * In other words, it is being removed from the screen as if he is actually collecting it.
+     * -Stephanie Lascola
+     */
+    public void remove()
+    {
+    Actor Currency;
+    Currency = getOneObjectAtOffset (0, 0, Currency.class);
+    if (Currency!=null)
+    {
+      World world;
+      world = getWorld();
+      world.removeObject(Currency);
+      
+    }  
     }
 }
